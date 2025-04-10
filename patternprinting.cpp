@@ -148,5 +148,33 @@ cout<<i<<" ";
 }
 int main(){
    
+pattern1();
+cout<<endl;
+pattern2();
+cout<<endl;
+pattern3();
+cout<<endl;
+pattern4();
+cout<<endl;
+pattern5();
+cout<<endl;
+pattern6();
+cout<<endl;
+pattern7();
+cout<<endl;
+pattern8();
+cout<<endl;
+pattern9();
+cout<<endl;
+pattern10();
+cout<<endl;
+pattern11();
+cout<<endl;
+pattern12();
+cout<<endl;
+pattern13();
+cout<<endl;
+pattern14();
+cout<<endl;
 pattern15();
 }
