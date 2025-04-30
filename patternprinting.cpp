@@ -146,35 +146,54 @@ cout<<i<<" ";
     }cout<<endl;
 }
 }
+void pattern16(){
+    for(int i=1; i<=4; i++){
+        for(int space=4-i; space>=0; space--){
+            cout<<" ";
+        }
+        char ch='A';
+        int breakpt=(2*i/2);
+        for(int print=1; print<=(2*i)-1;print++){
+            cout<<ch;
+            if(print<breakpt) ch++;
+            else ch--;
+        }
+        for(int space=4-i; space>0; space--){
+            cout<<" ";
+        }
+    cout<<endl;
+}
+}
 int main(){
    
-pattern1();
-cout<<endl;
-pattern2();
-cout<<endl;
-pattern3();
-cout<<endl;
-pattern4();
-cout<<endl;
-pattern5();
-cout<<endl;
-pattern6();
-cout<<endl;
-pattern7();
-cout<<endl;
-pattern8();
-cout<<endl;
-pattern9();
-cout<<endl;
-pattern10();
-cout<<endl;
-pattern11();
-cout<<endl;
-pattern12();
-cout<<endl;
-pattern13();
-cout<<endl;
-pattern14();
-cout<<endl;
-pattern15();
+// pattern1();
+// cout<<endl;
+// pattern2();
+// cout<<endl;
+// pattern3();
+// cout<<endl;
+// pattern4();
+// cout<<endl;
+// pattern5();
+// cout<<endl;
+// pattern6();
+// cout<<endl;
+// pattern7();
+// cout<<endl;
+// pattern8();
+// cout<<endl;
+// pattern9();
+// cout<<endl;
+// pattern10();
+// cout<<endl;
+// pattern11();
+// cout<<endl;
+// pattern12();
+// cout<<endl;
+// pattern13();
+// cout<<endl;
+// pattern14();
+// cout<<endl;
+// pattern15();
+pattern16();
 }
