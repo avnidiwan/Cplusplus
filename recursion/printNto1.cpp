@@ -6,11 +6,15 @@ void print(int n){
     cout << n << endl;
     print(n-1); // Recursive call with reduced value
 }
+void print(int n , int i){
+    if(n<i){
+        return;
+    }
+    cout<<n<<endl;
+    print(n-1,i);
+}
 
 int main(){
     int n; cin >> n;
-    if (n >= 1){
-        print(n);
-    }
-    return 0;  // Return success status
+    print(n,1);
 }
