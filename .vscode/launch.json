@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/vs code/C++/dsa practice",
-      "program": "c:/vs code/C++/dsa practice/build/Debug/outDebug",
+      "cwd": "c:/vs code/C++/dsa practice/recursion",
+      "program": "c:/vs code/C++/dsa practice/recursion/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
