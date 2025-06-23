@@ -13,22 +13,14 @@ int main(){
     for(int i=0; i<n; i++){
         cin>>a2[i];
     }
-
-
-    //#1
     set<int>s;
     for(int i=0; i<m; i++){
-        s.insert(a1[i]);
+        for(int j=0; j<n; j++){
+            if(a1[i]==a2[j])
+            s.insert(a2[j]);
     }
-    for(int j=0; j<n; j++){
-        s.insert(a2[j]);
     }
     for(auto i:s){
         cout<<i<<" ";
     }
-
-
-
-    //#2 using two-pointer approach
-    
 }
