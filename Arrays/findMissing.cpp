@@ -9,27 +9,29 @@ int main(){
     for (int i = 1; i < n; ++i) {
         if (a[i] > maxVal)
             maxVal = a[i];
-    }bool anyMissing=0;
-
-   for (int check = 0; check <= maxVal; ++check) {
+    }//bool anyMissing=0;
+int num=0;
+   for (int i = 0; i <= maxVal; i++) {
         bool found = false;
-        for (int i = 0; i < n; ++i) {
-            if (a[i] == check) {
+        for (int j = 0; j < n; j++) {
+            if (a[j] == num) {
+                num++;
                 found = true;
                 break;
             }
         }
-        if (!found) {
-            cout << check << " ";
-            anyMissing = true;
+        if (found==false) {
+            cout << num << " ";
+            num++;
+            //anyMissing = true;
         }
     }
 
-    if (!anyMissing) {
-        cout << "None (all numbers from 0 to " << maxVal << " are present)";
-    }
+    // if (!anyMissing) {
+    //     cout << "None (all numbers from 0 to " << maxVal << " are present)";
+    // }
 
-    cout << endl;
+    // cout << endl;
     return 0;
 }
 
