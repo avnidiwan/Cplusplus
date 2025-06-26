@@ -9,7 +9,7 @@ int main(){
     for (int i = 1; i < n; ++i) {
         if (a[i] > maxVal)
             maxVal = a[i];
-    }//bool anyMissing=0;
+    }
 int num=0;
    for (int i = 0; i <= maxVal; i++) {
         bool found = false;
@@ -23,15 +23,11 @@ int num=0;
         if (found==false) {
             cout << num << " ";
             num++;
-            //anyMissing = true;
+            
         }
     }
 
-    // if (!anyMissing) {
-    //     cout << "None (all numbers from 0 to " << maxVal << " are present)";
-    // }
-
-    // cout << endl;
+    
     return 0;
 }
 
