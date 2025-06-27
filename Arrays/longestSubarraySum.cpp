@@ -19,8 +19,7 @@ int main(){
         else if(sum==findsum){
             while(sum>0){
                 sum-=a[i-1];
-                num=num*10+a[i];
-                
+                num=num*10+a[i];   
                 i--;
             }
             cout<<num;

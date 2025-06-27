@@ -10,7 +10,10 @@ int main(){
         if (a[i] > maxVal)
             maxVal = a[i];
     }
-int num=0;
+
+
+    //bruteforce approach
+   int num=0;
    for (int i = 0; i <= maxVal; i++) {
         bool found = false;
         for (int j = 0; j < n; j++) {
@@ -25,9 +28,22 @@ int num=0;
             num++;
             
         }
-    }
+    }//tc-> O(n*2)
 
     
+
+
+    // better approach using hashing
+    int hash[maxVal+1]={0};
+    for(int i=0; i<n; i++){
+        hash[a[i]]=1;
+    }
+    for(int i=0; i<maxVal+1; i++){
+        if(hash[i]==0){
+            cout<<i<<" ";
+        }else continue;
+    }
+    //tc-> O(2n)
     return 0;
 }
 
