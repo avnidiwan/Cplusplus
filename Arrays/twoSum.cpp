@@ -15,8 +15,12 @@ int main(){
                 cout<<"indices "<<i<<" "<<j;
             }
         }
-    }
+    }}
+
+
     //#2 better solution using hashmap
+class Solution{
+    public:
      vector<int> twoSum(vector<int>& nums, int target) {
        map<int,int> m;
        int n=nums.size();
@@ -29,4 +33,4 @@ int main(){
        }
        return {-1,-1};
     }
-}
+};
