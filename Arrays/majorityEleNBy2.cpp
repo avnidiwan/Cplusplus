@@ -10,31 +10,31 @@ int main(){
 
     //#1 brute force solution
     int num;
-    // for(int i=0; i<n; i++){
-    //     int count=0;
-    //     for(int j=0; j<n; j++){
-    //         if(arr[i]==arr[j])
-    //         count++;
-    //     }
-    //     if(count>(n/2)){
-    //          num= arr[i];
-    //     }
-    // }
-    // cout<<num;
+    for(int i=0; i<n; i++){
+        int count=0;
+        for(int j=0; j<n; j++){
+            if(arr[i]==arr[j])
+            count++;
+        }
+        if(count>(n/2)){
+             num= arr[i];
+        }
+    }
+    cout<<num;
 
 
 
     //#2 Better solution using hashing
-    // unordered_map<int, int> m;
-    // for(int i=0; i<n; i++){
-    //     m[arr[i]]++;
-    // }
-    // for(auto i:m){
-    //     if(i.second>n/2){
-    //         num=i.first;
-    //     }
-    // }
-    // cout<<num;
+    unordered_map<int, int> m;
+    for(int i=0; i<n; i++){
+        m[arr[i]]++;
+    }
+    for(auto i:m){
+        if(i.second>n/2){
+            num=i.first;
+        }
+    }
+    cout<<num;
 
 
 
