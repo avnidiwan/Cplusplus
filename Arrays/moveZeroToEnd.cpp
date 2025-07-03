@@ -13,7 +13,6 @@ for (int i = 0; i < n; i++) {
 int index = 0;
 int countzero = 0;
 
-// Move non-zero elements forward
 for (int i = 0; i < n; i++) {
     if (a[i] != 0) {
         a[index++] = a[i];
@@ -22,12 +21,10 @@ for (int i = 0; i < n; i++) {
     }
 }
 
-// Fill trailing positions with zeros
 for (int i = index; i < n; i++) {
     a[i] = 0;
 }
 
-// Output
 cout << countzero << endl;
 for (int i = 0; i < n; i++) {
     cout << a[i] << " ";
