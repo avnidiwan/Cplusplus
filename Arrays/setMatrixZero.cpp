@@ -19,8 +19,9 @@ int main(){
                 for(int k=0; k<row; k++){
                     a[k][j]=0; // Set the entire column to 0
                 } 
+                //aim is to set row zero
                 for(int k=0; k<column; k++){
-                    a[i][k]=0; // Set the entire column to 0
+                    
                 }   
             }
         }
