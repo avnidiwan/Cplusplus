@@ -17,11 +17,15 @@ int main(){
         for(int j=0; j<column; j++){
             if(a[i][j]==0){
                 for(int k=0; k<row; k++){
-                    a[k][j]=0; // Set the entire column to 0
+                    if(k==1) continue;
+                    else
+                    a[i][k]=0; 
                 } 
                 //aim is to set row zero
                 for(int k=0; k<column; k++){
-                    
+                    if(k==j) continue;
+                    else
+                    a[k][j]=0;
                 }   
             }
         }
