@@ -13,6 +13,7 @@ int main(){
             
         }
     }
+    bool flag=false;
     for(int i=0; i<row; i++){
         for(int j=0; j<column; j++){
             if(a[i][j]==0){
@@ -26,10 +27,13 @@ int main(){
                     if(k==j) continue;
                     else
                     a[k][j]=0;
-                }   
+                }  
+                flag=true;
+                break; 
             }
-        }
+        }if(flag==true) break;
     }
+    //now only runs for {{1,1,1},{1,0,1},{1,1,1}}
     for(int i=0;i<row; i++){
         for(int j=0; j<column; j++){
             cout<<a[i][j]<<" ";
