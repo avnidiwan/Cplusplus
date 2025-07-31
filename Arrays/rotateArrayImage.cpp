@@ -1,4 +1,6 @@
-
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
     int row,col;
     cin>>row>>col;
     int a[row][col];
@@ -7,9 +9,10 @@
             cin>>a[i][j];
         }
     }
-    for(int a=0; a<col; a++){
+    for(int j=0; j<col; j++){
         for(int i=row-1; i>=0; i--){
-            cout<<a[i][a] << " ";
+            cout<<a[i][j]<< " ";
         }
         cout<<endl;
     }
+}
