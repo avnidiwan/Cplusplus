@@ -3,6 +3,103 @@
 using namespace std;
 int main(){
 
+/*
+    //bruteforce solution
+    int m, n;
+    cin>>m>>n;
+    int arr[m][n];
+    for(int i=0; i<m; i++){
+        for(int j=0; j<n; j++){
+            cin>>arr[i][j];
+        }
+    }
+    
+
+    for(int i=0; i<m; i++){
+        for(int j=0; j<n; j++){
+            if(arr[i][j]==0){
+                for(int k=0; k<m; k++){
+                    if(arr[k][j]!=0)
+                    arr[k][j]=-1;
+                    else continue;
+                }
+                for(int k=0; k<n; k++){
+                    if(arr[i][k]!=0)
+                    arr[i][k]=-1;
+                    else continue;
+                }
+            }
+        }
+    }
+
+    for(int i=0; i<m; i++){
+        for(int j=0; j<n; j++){
+            if(arr[i][j]==-1){
+                arr[i][j]=0;
+            }
+        }
+    }
+
+    for(int i=0; i<m; i++){
+        for(int j=0; j<n; j++){
+            cout<<arr[i][j]<<" ";
+        }
+    }
+t.c.-> n^3
+    */
+
+
+
+
+/*
+    //better solution
+    int m, n;
+    cin>>m>>n;
+    int arr[m][n];
+    for(int i=0; i<m; i++){
+        for(int j=0; j<n; j++){
+            cin>>arr[i][j];
+        }
+    }
+
+    int row[m]={0};
+    int column[n]={0};
+
+    for(int i=0; i<m; i++){
+        for(int j=0; j<n; j++){
+            if(arr[i][j]==0){
+                column[j]=1;
+                row[i]=1;
+            }
+        }
+    }
+    for(int x=0; x<m; x++){
+        if(row[x]==1){
+           for(int j=0; j<n; j++){
+                arr[x][j]=0;
+           }
+        }
+    }
+    for(int x=0; x<n; x++){
+        if(column[x]==1){
+            for(int i=0; i<m; i++){
+                arr[i][x]=0;
+            }
+        }
+    }
+    for(int i=0; i<m; i++){
+        for(int j=0; j<n; j++){
+            cout<<arr[i][j]<<" ";
+        }
+    }
+    t.c.-> n^2
+    s.c.-> O(m)+O(n) using 2 extra array
+    */
+
+
+
+
+
     int row, column;
    
     cin>>row;
@@ -14,24 +111,25 @@ int main(){
             
         }
     }
-    bool flag=false;
+    vector<pair<int, int>> p;
     for(int i=0; i<row; i++){
         for(int j=0; j<column; j++){
             if(a[i][j]==0){
-                for(int k=0; k<column; k++){
-                   
-                    a[i][k]=0; 
-                } 
-                //aim is to set row zero
-                for(int k=0; k<row; k++){
-                   
-                    a[k][j]=0;
-                }  
-                flag=true;
-                break; 
+                p.push_back({i,j});
             }
-        }if(flag==true) break;
+        }
     }
+    for(auto it : p){
+        int x = it.first;
+        int y = it.second;
+        for(int i=0; i<row; i++){
+            a[i][y]=0;
+        }
+        for(int j=0; j<column; j++){
+            a[x][j]=0;
+        }
+    }
+ 
 
     for(int i=0;i<row; i++){
         for(int j=0; j<column; j++){
