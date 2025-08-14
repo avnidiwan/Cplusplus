@@ -1,5 +1,4 @@
-
-    int row,col;
+int row,col;
     cin>>row>>col;
     int a[row][col];
     for(int i=0; i<row; i++){
@@ -7,9 +6,20 @@
             cin>>a[i][j];
         }
     }
-    for(int a=0; a<col; a++){
-        for(int i=row-1; i>=0; i--){
-            cout<<a[i][a] << " ";
+    for(int i=0; i<row; i++){
+        for(int j=0; j<col; j++){
+           if(i<j){
+            swap(a[i][j], a[j][i]);
+           }
         }
         cout<<endl;
+    }
+    for(int i=0; i<row; i++){
+        reverse(a[i], a[i] + col);
+    }
+    for(int i=0; i<row; i++){
+    for(int j=0; j<col; j++){
+        
+            cout<<a[i][j]<< " ";
+        }
     }

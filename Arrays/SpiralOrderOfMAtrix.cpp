@@ -2,59 +2,34 @@
 #include <vector>
 using namespace std;
 
-vector<int> spiralOrder(vector<vector<int>>& matrix) {
-    vector<int> result;
-    if (matrix.empty()) return result;
-
-    int top = 0;
-    int bottom = matrix.size() - 1;
-    int left = 0;
-    int right = matrix[0].size() - 1;
-
-    while (top <= bottom && left <= right) {
-        for (int col = left; col <= right; ++col)
-            result.push_back(matrix[top][col]);
-        ++top;
-
-        for (int row = top; row <= bottom; ++row)
-            result.push_back(matrix[row][right]);
-        --right;
-
-        if (top <= bottom) {
-            for (int col = right; col >= left; --col)
-                result.push_back(matrix[bottom][col]);
-            --bottom;
-        }
-
-        if (left <= right) {
-            for (int row = bottom; row >= top; --row)
-                result.push_back(matrix[row][left]);
-            ++left;
+int main(){
+    int row, col;
+    cin>>row>>col;
+    int a[row][col];
+    for(int i=0; i<row; i++){
+        for(int j=0; j<col; j++){
+            cin>>a[i][j];
         }
     }
 
-    return result;
-}
+    int top=0, left=0, right=col-1, bottom=row-1;
 
-int main() {
-    int m, n;
-    cout << "Enter number of rows (m): ";
-    cin >> m;
-    cout << "Enter number of columns (n): ";
-    cin >> n;
-
-    vector<vector<int>> matrix(m, vector<int>(n));
-    cout << "Enter matrix elements row-wise:\n";
-    for (int i = 0; i < m; ++i)
-        for (int j = 0; j < n; ++j)
-            cin >> matrix[i][j];
-
-    vector<int> result = spiralOrder(matrix);
-
-    cout << "Spiral Order: ";
-    for (int num : result)
-        cout << num << " ";
-    cout << endl;
-
-    return 0;
+    while(left<=right && top<=bottom){
+        for(int i=left; i<=right; i++){
+            cout<<a[top][i]<<" ";
+        }
+        top++;
+        for(int i=top; i<=bottom; i++){
+            cout<<a[i][right]<<" ";
+        }
+        right--;
+        for(int i=right; i>=left; i--){
+            cout<<a[bottom][i]<<" ";
+        }
+        bottom--;
+        for(int i=bottom; i>=top; i--){
+            cout<<a[i][left]<<" ";
+        }
+        left++;
+    }
 }
