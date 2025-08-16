@@ -26,10 +26,28 @@ using namespace std;
 
 
 
+
+//this code handles remove duplicate cases but cant handle large inputs efficiently
 class Solution {
 public:
-    vector<vector<int>> threeSum(vector<int>& nums) {
-   
+    vector<vector<int>> threeSum(vector<int>& nums) {  
+        set<vector<int>> s;
+        int n=nums.size();
+        for(int i=0; i<n; i++){
+            for(int j=i+1; j<n; j++){
+                for(int k=j+1; k<n; ){
+                    if(nums[i] + nums[j] + nums[k] == 0){
+                     vector<int> triplet= {nums[i] , nums[j] , nums[k]};
+                     sort(triplet.begin(), triplet.end());
+                     s.insert(triplet);
+                        k++;
+                    }
+                    else k++;
+                }
+            }
+        }
+       vector<vector<int>> res(s.begin(), s.end());
+     return res;   
     }
 };
 
